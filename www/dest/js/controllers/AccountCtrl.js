@@ -1,0 +1,1 @@
+"use strict";app.controller("AccountCtrl",["$scope",function(a){a.settings={enableFriends:!0}}]);

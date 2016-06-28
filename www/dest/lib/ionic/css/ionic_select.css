@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/**
+ * Select
+ * --------------------------------------------------
+ */
+.item-select {
+    position: relative; }
+.item-select select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 48px 0 16px;
+    max-width: 65%;
+    border: none;
+    background: #fff;
+    color: #333;
+    text-indent: .01px;
+    text-overflow: '';
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    direction: rtl; }
+.item-select select::-ms-expand {
+    display: none; }
+.item-select option {
+    direction: ltr; }
+.item-select:after {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    margin-top: -3px;
+    width: 0;
+    height: 0;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    color: #999;
+    content: "";
+    pointer-events: none; }
+.item-select.item-light select {
+    background: #fff;
+    color: #444; }
+.item-select.item-stable select {
+    background: #f8f8f8;
+    color: #444; }
+.item-select.item-stable:after, .item-select.item-stable .input-label {
+    color: #666666; }
+.item-select.item-positive select {
+    background: #387ef5;
+    color: #fff; }
+.item-select.item-positive:after, .item-select.item-positive .input-label {
+    color: #fff; }
+.item-select.item-calm select {
+    background: #11c1f3;
+    color: #fff; }
+.item-select.item-calm:after, .item-select.item-calm .input-label {
+    color: #fff; }
+.item-select.item-assertive select {
+    background: #ef473a;
+    color: #fff; }
+.item-select.item-assertive:after, .item-select.item-assertive .input-label {
+    color: #fff; }
+.item-select.item-balanced select {
+    background: #33cd5f;
+    color: #fff; }
+.item-select.item-balanced:after, .item-select.item-balanced .input-label {
+    color: #fff; }
+.item-select.item-energized select {
+    background: #ffc900;
+    color: #fff; }
+.item-select.item-energized:after, .item-select.item-energized .input-label {
+    color: #fff; }
+.item-select.item-royal select {
+    background: #886aea;
+    color: #fff; }
+.item-select.item-royal:after, .item-select.item-royal .input-label {
+    color: #fff; }
+.item-select.item-dark select {
+    background: #444;
+    color: #fff; }
+.item-select.item-dark:after, .item-select.item-dark .input-label {
+    color: #fff; }
+
+select[multiple], select[size] {
+    height: auto; }

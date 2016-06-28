@@ -1,0 +1,1 @@
+"use strict";app.controller("ChatsCtrl",["$scope","ChatsService",function(a,b){a.chats=b.all(),a.remove=function(a){b.remove(a)}}]);

@@ -1,0 +1,1 @@
+"use strict";app.controller("ChatDetailCtrl",["$scope","$stateParams","ChatsService",function(a,b,c){a.chat=c.get(b.chatId)}]);

@@ -1,0 +1,16 @@
+{
+  "name": "lbwan",
+  "version": "0.0.1",
+  "description": "lbwan: An Ionic project",
+  "author": "小虎Oni",
+  "devDependencies": {
+    "grunt": "~1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "~1.0.1",
+    "grunt-contrib-imagemin": "^1.0.0",
+    "grunt-contrib-htmlmin": "^1.4.0",
+    "grunt-contrib-uglify": "~1.0.1",
+    "grunt-jsdoc": "^2.1.0",
+    "load-grunt-tasks": "~3.5.0"
+  }
+}

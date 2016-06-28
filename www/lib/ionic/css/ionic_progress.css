@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+
+/**
+ * Progress
+ * --------------------------------------------------
+ */
+progress {
+    display: block;
+    margin: 15px auto;
+    width: 100%; }

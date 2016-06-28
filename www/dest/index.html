@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <!--<link href="lib/ionic/css/ionic.min.css" rel="stylesheet">-->
+      <link href="lib/ionic/css/ionic_utility.min.css" rel="stylesheet">
+      <link href="lib/ionic/css/ionic_tabs.min.css" rel="stylesheet">
+      <link href="lib/ionic/css/ionic_bar.min.css" rel="stylesheet">
+      <link href="lib/ionic/css/ionic_buttons.min.css" rel="stylesheet">
+      <link href="lib/ionic/css/ionic_icon.min.css" rel="stylesheet">
+      <link href="lib/ionic/css/ionic_platform.min.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <!--<script src="lib/ionic/js/ionic.bundle.min.js"></script>-->
+      <script src="lib/ionic/js/angular/angular.min.js"></script>
+    <script src="lib/ionic/js/ionic.min.js"></script>
+    <script src="lib/ionic/js/ionic-angular.min.js"></script>
+    <script src="lib/ionic/js/angular-ui/angular-ui-router.min.js"></script>
+    <script src="lib/ionic/js/angular/angular-sanitize.min.js"></script>
+
+    <script src="lib/ionic/js/angular/angular-animate.min.js"></script>
+    <!--<script src="lib/ionic/js/angular/angular-resource.min.js"></script>-->
+    <!-- oclazyload -->
+    <script src="lib/oclazyload/dist/ocLazyLoad.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+
+    <!-- your app's js -->
+    <script src="js/App.js"></script>
+    <script src="js/Config.js"></script>
+      <script src="js/directives/OniBarDirective.js"></script>
+      <!--  正式文件-->
+      <script src="http://test.lbwan.com/test/newsdk/authUtil.js"></script>
+      <script src="http://test.lbwan.com/test/newsdk/CrossStorage.js"></script>
+      <script src="http://test.lbwan.com/test/newsdk/hub.js"></script>
+      <script src="http://test.lbwan.com/test/newsdk/LBSDKEntity.js"></script>
+  </head>
+  <body>
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <oni-bar items="{{onibaritems}}"></oni-bar>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+  </body>
+  <script type="text/javascript">
+      var onlyOnce = true;
+      LBSDKEntity.getInstance().init(null,function(code,data){
+          if (code === LBSDKEntity.ERR_SUCCESS){
+              console.log("初始化成功")
+              angular.bootstrap(document, ["starter"]);
+              if(!onlyOnce) return;
+              onlyOnce = false;
+              //$rootScope.showLoading();
+              LBSDKEntity.getInstance().doLogin(function (user) {
+                  if (user){
+                      //$rootScope.hideLoading()
+                      onlyOnce = true
+                  }else{
+                      LBAuthSDK.getInstance().showLoginUI(false, function (data) {
+                          //$rootScope.hideLoading()
+                          onlyOnce = true
+                      });
+                  }
+              },false)
+//              LBAuthSDK.getInstance().showLoginUI(false, function (data) {
+////                          saveUserInfo(data,callback)
+//              });
+
+          }else{
+              console.log(data);
+          }
+      });
+  </script>
+</html>

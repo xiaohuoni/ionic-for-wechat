@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/**
+ * Platform
+ * --------------------------------------------------
+ * Platform specific tweaks
+ */
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) {
+    height: 64px; }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
+    margin-top: 19px !important; }
+.platform-ios.platform-cordova:not(.fullscreen) .bar-header:not(.bar-subheader) > * {
+    margin-top: 20px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .tabs-top > .tabs,
+.platform-ios.platform-cordova:not(.fullscreen) .tabs.tabs-top {
+    top: 64px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-header,
+.platform-ios.platform-cordova:not(.fullscreen) .bar-subheader {
+    top: 64px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-subheader {
+    top: 108px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-header.has-tabs-top {
+    top: 113px; }
+
+.platform-ios.platform-cordova:not(.fullscreen) .has-header.has-subheader.has-tabs-top {
+    top: 157px; }
+
+.platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) {
+    height: 44px; }
+.platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader).item-input-inset .item-input-wrapper {
+    margin-top: -1px; }
+.platform-ios.platform-cordova .popover .bar-header:not(.bar-subheader) > * {
+    margin-top: 0; }
+
+.platform-ios.platform-cordova .popover .has-header,
+.platform-ios.platform-cordova .popover .bar-subheader {
+    top: 44px; }
+
+.platform-ios.platform-cordova .popover .has-subheader {
+    top: 88px; }
+
+.platform-ios.platform-cordova.status-bar-hide {
+    margin-bottom: 20px; }
+
+@media (orientation: landscape) {
+    .platform-ios.platform-browser.platform-ipad {
+        position: fixed; } }
+
+.platform-c:not(.enable-transitions) * {
+    -webkit-transition: none !important;
+    transition: none !important; }
+
+
+[nav-view-transition="ios"] [nav-view="entering"],
+[nav-view-transition="ios"] [nav-view="leaving"] {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+    transition-property: opacity, transform, box-shadow; }
+
+[nav-view-transition="ios"][nav-view-direction="forward"], [nav-view-transition="ios"][nav-view-direction="back"] {
+    background-color: #000; }
+
+[nav-view-transition="ios"] [nav-view="active"],
+[nav-view-transition="ios"][nav-view-direction="forward"] [nav-view="entering"],
+[nav-view-transition="ios"][nav-view-direction="back"] [nav-view="leaving"] {
+    z-index: 3; }
+
+[nav-view-transition="ios"][nav-view-direction="back"] [nav-view="entering"],
+[nav-view-transition="ios"][nav-view-direction="forward"] [nav-view="leaving"] {
+    z-index: 2; }
+
+[nav-bar-transition="ios"] .title,
+[nav-bar-transition="ios"] .buttons,
+[nav-bar-transition="ios"] .back-text {
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+    -webkit-transition-property: opacity, -webkit-transform;
+    transition-property: opacity, transform; }
+
+[nav-bar-transition="ios"] [nav-bar="active"],
+[nav-bar-transition="ios"] [nav-bar="entering"] {
+    z-index: 10; }
+[nav-bar-transition="ios"] [nav-bar="active"] .bar,
+[nav-bar-transition="ios"] [nav-bar="entering"] .bar {
+    background: transparent; }
+
+[nav-bar-transition="ios"] [nav-bar="cached"] {
+    display: block; }
+[nav-bar-transition="ios"] [nav-bar="cached"] .header-item {
+    display: none; }
+
+[nav-view-transition="android"] [nav-view="entering"],
+[nav-view-transition="android"] [nav-view="leaving"] {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+    -webkit-transition-property: -webkit-transform;
+    transition-property: transform; }
+
+[nav-view-transition="android"] [nav-view="active"],
+[nav-view-transition="android"][nav-view-direction="forward"] [nav-view="entering"],
+[nav-view-transition="android"][nav-view-direction="back"] [nav-view="leaving"] {
+    z-index: 3; }
+
+[nav-view-transition="android"][nav-view-direction="back"] [nav-view="entering"],
+[nav-view-transition="android"][nav-view-direction="forward"] [nav-view="leaving"] {
+    z-index: 2; }
+
+[nav-bar-transition="android"] .title,
+[nav-bar-transition="android"] .buttons {
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+    transition-timing-function: cubic-bezier(0.4, 0.6, 0.2, 1);
+    -webkit-transition-property: opacity;
+    transition-property: opacity; }
+
+[nav-bar-transition="android"] [nav-bar="active"],
+[nav-bar-transition="android"] [nav-bar="entering"] {
+    z-index: 10; }
+[nav-bar-transition="android"] [nav-bar="active"] .bar,
+[nav-bar-transition="android"] [nav-bar="entering"] .bar {
+    background: transparent; }
+
+[nav-bar-transition="android"] [nav-bar="cached"] {
+    display: block; }
+[nav-bar-transition="android"] [nav-bar="cached"] .header-item {
+    display: none; }
+
+[nav-swipe="fast"] [nav-view],
+[nav-swipe="fast"] .title,
+[nav-swipe="fast"] .buttons,
+[nav-swipe="fast"] .back-text {
+    -webkit-transition-duration: 50ms;
+    transition-duration: 50ms;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear; }
+
+[nav-swipe="slow"] [nav-view],
+[nav-swipe="slow"] .title,
+[nav-swipe="slow"] .buttons,
+[nav-swipe="slow"] .back-text {
+    -webkit-transition-duration: 160ms;
+    transition-duration: 160ms;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear; }
+
+[nav-view="cached"],
+[nav-bar="cached"] {
+    display: none; }
+
+[nav-view="stage"] {
+    opacity: 0;
+    -webkit-transition-duration: 0;
+    transition-duration: 0; }
+
+[nav-bar="stage"] .title,
+[nav-bar="stage"] .buttons,
+[nav-bar="stage"] .back-text {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition-duration: 0s;
+    transition-duration: 0s; }
